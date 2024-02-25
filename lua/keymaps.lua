@@ -1,0 +1,8 @@
+vim.keymap.set("n", "<leader>s", ":wa<CR>", {})
+vim.keymap.set("n", "<leader>M", ":Mason<CR>", {})
+vim.keymap.set("n", "Q", ":q!<CR>", {})
+vim.keymap.set({ "i" }, "jk", "<Esc><CR>", { silent = true })
+vim.keymap.set("v", ",", "<Esc><CR>")
+vim.keymap.set("n", "<leader>v", ":vs<CR>", { silent = true })
+vim.keymap.set("n", "<leader>vs", ":sp<CR>", { silent = true })
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
