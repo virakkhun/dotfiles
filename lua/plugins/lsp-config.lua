@@ -16,7 +16,7 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		lazy = false,
-		init = function()
+		config = function()
 			local capabilities =
 				require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
@@ -24,6 +24,26 @@ return {
 
 			lspconfig.tsserver.setup({
 				capabilities = capabilities,
+				on_attach = function()
+					vim.keymap.set("n", "<leader>co", function()
+						vim.lsp.buf.code_action({
+							apply = true,
+							context = {
+								only = { "source.organizeImports.ts" },
+								diagnostics = {},
+							},
+						})
+					end)
+					vim.keymap.set("n", "<leader>cR", function()
+						vim.lsp.buf.code_action({
+							apply = true,
+							context = {
+								only = { "source.removeUnused.ts" },
+								diagnostics = {},
+							},
+						})
+					end)
+				end,
 			})
 			lspconfig.html.setup({
 				capabilities = capabilities,

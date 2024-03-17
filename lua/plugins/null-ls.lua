@@ -1,21 +1,3 @@
--- local function removeUnused(ctx)
--- 	local filename = vim.api.nvim_buf_get_name(ctx.bufnr)
--- 	local len = string.len(filename)
--- 	local ext = string.sub(filename, len - 2, len)
--- 	if ext == ".ts" then
--- 		vim.lsp.buf.code_action({
--- 			apply = true,
--- 			context = {
--- 				only = {
--- 					"source.removeUnused.ts",
--- 				},
--- 				diagnostics = {},
--- 			},
--- 		})
--- 	else
--- 	end
--- end
-
 return {
 	{
 		"nvimtools/none-ls.nvim",
