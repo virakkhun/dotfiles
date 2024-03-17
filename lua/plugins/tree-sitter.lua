@@ -5,7 +5,19 @@ return {
 		local treesitter = require("nvim-treesitter.configs")
 
 		treesitter.setup({
-			ensure_installed = { "lua", "vim", "elixir", "javascript", "html", "rust", "typescript", "svelte" },
+			ensure_installed = {
+				"lua",
+				"vim",
+				"elixir",
+				"javascript",
+				"html",
+				"rust",
+				"typescript",
+				"svelte",
+				"go",
+				"yaml",
+				"json",
+			},
 			sync_install = false,
 			highlight = {
 				enable = true,

@@ -39,12 +39,20 @@ return {
         },
         {
           filter = {
+            event = "notify",
+            find = "No code actions available",
+          },
+          opts = {
+            skip = true,
+          },
+        },
+        {
+          filter = {
             event = "msg_show",
             find = "written",
           },
           opts = {
-            title = "Hello bro",
-            skip = false,
+            skip = true,
           },
         },
       },

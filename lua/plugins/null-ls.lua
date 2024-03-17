@@ -1,18 +1,71 @@
+-- local function removeUnused(ctx)
+-- 	local filename = vim.api.nvim_buf_get_name(ctx.bufnr)
+-- 	local len = string.len(filename)
+-- 	local ext = string.sub(filename, len - 2, len)
+-- 	if ext == ".ts" then
+-- 		vim.lsp.buf.code_action({
+-- 			apply = true,
+-- 			context = {
+-- 				only = {
+-- 					"source.removeUnused.ts",
+-- 				},
+-- 				diagnostics = {},
+-- 			},
+-- 		})
+-- 	else
+-- 	end
+-- end
+
 return {
-  {
-    "nvimtools/none-ls.nvim",
-    init = function()
-      local null_ls = require("null-ls")
+	{
+		"nvimtools/none-ls.nvim",
+		init = function()
+			local null_ls = require("null-ls")
+			local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
+			local event = "BufWritePre" -- or "BufWritePost"
 
-      null_ls.setup({
-        sources = {
-          null_ls.builtins.formatting.stylua,
-          null_ls.builtins.formatting.prettier,
-          null_ls.builtins.diagnostics.eslint_d,
-        },
-      })
+			null_ls.setup({
+				sources = {
+					null_ls.builtins.formatting.stylua,
+					null_ls.builtins.formatting.prettier,
+					null_ls.builtins.formatting.gofumpt,
+					null_ls.builtins.diagnostics.eslint_d,
+					null_ls.builtins.code_actions.eslint_d,
+				},
+				on_attach = function(client, bufnr)
+					if client.supports_method("textDocument/formatting") then
+						vim.keymap.set("n", "<leader>f", function()
+							vim.lsp.buf.format({
+								bufnr = vim.api.nvim_get_current_buf(),
+								async = false,
+								filter = function(cli)
+									return cli.name == "null-ls"
+								end,
+							})
+						end, {
+							buffer = bufnr,
+							desc = "[lsp] format",
+						})
 
-      vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { silent = true })
-    end,
-  },
+						-- format on save
+						vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
+						vim.api.nvim_create_autocmd(event, {
+							buffer = bufnr,
+							group = group,
+							callback = function()
+								vim.lsp.buf.format({
+									bufnr = bufnr,
+									async = false,
+									filter = function(cli)
+										return cli.name == "null-ls"
+									end,
+								})
+							end,
+							desc = "[lsp] format on save",
+						})
+					end
+				end,
+			})
+		end,
+	},
 }
