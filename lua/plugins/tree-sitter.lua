@@ -16,7 +16,7 @@ return {
 				"svelte",
 				"go",
 				"yaml",
-				"json",
+				"tsx",
 			},
 			sync_install = false,
 			highlight = {
