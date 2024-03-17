@@ -1,12 +1,12 @@
 return {
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    opts = {},
-    init = function()
-      require("ibl").setup({
-        indent = { char = "▏" },
-      })
-    end,
-  },
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		opts = {},
+		init = function()
+			require("ibl").setup({
+				indent = { char = "▏" },
+			})
+		end,
+	},
 }
