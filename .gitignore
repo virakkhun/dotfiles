@@ -1,0 +1,7 @@
+*
+!/nvim
+!/nvim/**/*
+!/alacritty
+!/alacritty/**/*
+!.gitignore
+!readme.md
