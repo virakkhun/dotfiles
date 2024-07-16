@@ -1,5 +1,6 @@
 return {
 	"nvim-lualine/lualine.nvim",
+	lazy = true,
 	event = "VeryLazy",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	init = function()
@@ -10,33 +11,19 @@ return {
 			vim.o.laststatus = 0
 		end
 	end,
-	opts = function()
+	config = function()
 		local lualine = require("lualine")
-
-		local mocha = require("catppuccin.palettes").get_palette("mocha")
-
-		local bubbles_theme = {
-			normal = {
-				a = { fg = mocha.base, bg = mocha.blue },
-				b = { fg = mocha.blue, bg = "#45475a" },
-				c = { fg = mocha.blue },
-			},
-			insert = { a = { fg = mocha.base, bg = mocha.green } },
-			visual = { a = { fg = mocha.base, bg = mocha.mauve } },
-			replace = { a = { fg = mocha.base, bg = mocha.red } },
-		}
 
 		vim.o.laststatus = vim.g.lualine_laststatus
 
 		lualine.setup({
 			options = {
-				theme = bubbles_theme,
+				theme = "tokyonight",
 				globalstatus = vim.o.laststatus == 3,
 				component_separators = "",
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = {
 					statusline = {
-						"neo-tree",
 						"alpha",
 					},
 				},

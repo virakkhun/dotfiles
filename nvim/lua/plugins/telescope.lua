@@ -7,14 +7,13 @@ return {
 		},
 		opts = {},
 		init = function()
-			-- mappings
 			local builtin = require("telescope.builtin")
-			vim.keymap.set("n", "<leader>,", builtin.find_files, {})
-			vim.keymap.set("n", "<leader>;", builtin.live_grep, {})
-			vim.keymap.set("n", "<leader>B", builtin.buffers, {})
-			vim.keymap.set("n", "<leader>ts", builtin.grep_string, {})
-			vim.keymap.set("n", "<leader>co", builtin.colorscheme, {})
-			vim.keymap.set("n", "<leader>tm", "<CMD>Telescope media_files<CR>", {})
+			vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+			vim.keymap.set("n", "<leader>fs", builtin.live_grep, {})
+			vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
+			vim.keymap.set("n", "<leader>fw", builtin.grep_string, {})
+			vim.keymap.set("n", "<leader>fc", builtin.colorscheme, {})
+			vim.keymap.set("n", "<leader>fm", "<CMD>Telescope media_files<CR>", {})
 		end,
 		config = function()
 			local tele = require("telescope")
