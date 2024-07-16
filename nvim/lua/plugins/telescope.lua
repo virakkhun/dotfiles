@@ -33,7 +33,6 @@ return {
 					prompt_prefix = " ",
 					selection_caret = "󰁕 ",
 				},
-				pickers = {},
 				extensions = {
 					fzf = {
 						fuzzy = true, -- false will only do exact matching
