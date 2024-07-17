@@ -125,9 +125,4 @@ return {
 		evnet = "VeryLazy",
 		after = "nvim-treesitter",
 	},
-	{
-		"windwp/nvim-ts-autotag",
-		event = "VeryLazy",
-		opts = {},
-	},
 }
