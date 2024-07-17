@@ -11,6 +11,7 @@ return {
 				"neo-tree",
 				"alpha",
 				"TelescopePrompt",
+				"neo-tree-popup",
 			},
 		})
 	end,

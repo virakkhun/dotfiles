@@ -1,20 +1,15 @@
 return {
 	"akinsho/bufferline.nvim",
-	event = "VeryLazy",
-	after = "cattpuccin",
+	lazy = true,
+	event = { "VeryLazy" },
 	keys = {
 		{ "<leader>]", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
 		{ "<leader>[", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
 	},
-	init = function()
-		local bufferline = require("bufferline")
-		bufferline.setup({
-			highlights = require("catppuccin.groups.integrations.bufferline").get({
-				styles = { "italic", "bold" },
-			}),
+	config = function()
+		require("bufferline").setup({
 			options = {
 				diagnostics = "nvim_lsp",
-				style_preset = bufferline.style_preset.minimal,
 				diagnostics_indicator = function(_, _, diagnostics_dict, _)
 					local s = " "
 					for e, n in pairs(diagnostics_dict) do

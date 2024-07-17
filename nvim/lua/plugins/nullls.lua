@@ -2,6 +2,7 @@ return {
 	{
 		"nvimtools/none-ls.nvim",
 		event = "VeryLazy",
+		lazy = true,
 		config = function()
 			local null_ls = require("null-ls")
 			local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
@@ -15,6 +16,7 @@ return {
 					}),
 					null_ls.builtins.formatting.gofumpt,
 					null_ls.builtins.code_actions.gitsigns,
+					require("none-ls.diagnostics.eslint"),
 				},
 				on_attach = function(client, bufnr)
 					if client.supports_method("textDocument/formatting") then

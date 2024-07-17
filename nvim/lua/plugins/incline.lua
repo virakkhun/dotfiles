@@ -1,7 +1,8 @@
 return {
 	{
 		"b0o/incline.nvim",
-		event = "VeryLazy",
+		event = { "VeryLazy", "BufEnter" },
+		lazy = true,
 		opts = {
 			window = {
 				padding = 0,

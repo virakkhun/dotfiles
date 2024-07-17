@@ -2,6 +2,7 @@ return {
 	{
 		"hrsh7th/cmp-nvim-lsp",
 		event = "VeryLazy",
+		lazy = true,
 		dependencies = {
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
@@ -15,6 +16,7 @@ return {
 	{
 		"hrsh7th/nvim-cmp",
 		event = "VeryLazy",
+		lazy = true,
 		config = function()
 			local cmp = require("cmp")
 
@@ -56,7 +58,16 @@ return {
 								return vim_item
 							end
 						end
-						return require("lspkind").cmp_format({ with_text = false })(entry, vim_item)
+						return require("lspkind").cmp_format({
+							mode = "symbol_text",
+							menu = {
+								buffer = "[Buffer]",
+								nvim_lsp = "[LSP]",
+								luasnip = "[LuaSnip]",
+								nvim_lua = "[Lua]",
+								latex_symbols = "[Latex]",
+							},
+						})(entry, vim_item)
 					end,
 				},
 			})
