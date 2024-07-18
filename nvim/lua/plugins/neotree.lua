@@ -36,6 +36,7 @@ return {
 					".angular",
 					".husky",
 					".vscode",
+					"node_modules",
 				},
 				never_show = {},
 				follow_current_file = {
@@ -56,6 +57,5 @@ return {
 	},
 	init = function()
 		vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>")
-		vim.keymap.set("n", "<leader>t", ":Neotree focus<CR>")
 	end,
 }

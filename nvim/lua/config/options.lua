@@ -4,6 +4,8 @@ vim.g.lazyvim_statuscolumn = {
 	folds_open = false, -- show fold sign when fold is open
 	folds_githl = false, -- highlight fold sign with git sign color
 }
+-- Fix markdown indentation settings
+vim.g.markdown_recommended_style = 0
 
 local opt = vim.opt
 
@@ -29,10 +31,17 @@ opt.fillchars = {
 opt.foldlevel = 99
 opt.formatexpr = "v:lua.require'lazyvim.util'.format.formatexpr()"
 opt.formatoptions = "jcroqlnt" -- tcqj
-opt.splitbelow = false
+opt.splitbelow = true
 opt.splitkeep = "screen"
 opt.splitright = true
 opt.statuscolumn = [[%!v:lua.require'lazyvim.util'.ui.statuscolumn()]]
+opt.hlsearch = false
+opt.backup = false
+opt.swapfile = false
+opt.conceallevel = 0
+opt.pumblend = 17
+opt.wildmode = "longest:full"
+opt.wildoptions = "pum"
 
 if vim.fn.has("nvim-0.10") == 1 then
 	opt.smoothscroll = true
@@ -43,6 +52,3 @@ else
 	opt.foldmethod = "indent"
 	opt.foldtext = "v:lua.require'lazyvim.util'.ui.foldtext()"
 end
-
--- Fix markdown indentation settings
-vim.g.markdown_recommended_style = 0
