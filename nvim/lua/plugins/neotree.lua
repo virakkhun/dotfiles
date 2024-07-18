@@ -33,6 +33,9 @@ return {
 					".git",
 					".DS_Store",
 					"thumbs.db",
+					".angular",
+					".husky",
+					".vscode",
 				},
 				never_show = {},
 				follow_current_file = {
