@@ -1,13 +1,14 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-vim.g.lazyvim_statuscolumn = {
+local g = vim.g
+local opt = vim.opt
+local w = vim.wo
+g.mapleader = " "
+g.maplocalleader = "\\"
+g.lazyvim_statuscolumn = {
 	folds_open = false, -- show fold sign when fold is open
 	folds_githl = false, -- highlight fold sign with git sign color
 }
 -- Fix markdown indentation settings
-vim.g.markdown_recommended_style = 0
-
-local opt = vim.opt
+g.markdown_recommended_style = 0
 
 opt.laststatus = 3
 opt.clipboard = "unnamedplus"
@@ -17,9 +18,11 @@ opt.number = true
 opt.relativenumber = true
 opt.signcolumn = "yes"
 opt.tabstop = 2
-opt.termguicolors = true
 opt.shiftwidth = 2
 opt.softtabstop = 2
+opt.termguicolors = true
+opt.autoindent = true
+opt.smartindent = true
 opt.fillchars = {
 	foldopen = "",
 	foldclose = "",
@@ -39,9 +42,6 @@ opt.hlsearch = false
 opt.backup = false
 opt.swapfile = false
 opt.conceallevel = 0
-opt.pumblend = 17
-opt.wildmode = "longest:full"
-opt.wildoptions = "pum"
 
 if vim.fn.has("nvim-0.10") == 1 then
 	opt.smoothscroll = true
@@ -52,3 +52,8 @@ else
 	opt.foldmethod = "indent"
 	opt.foldtext = "v:lua.require'lazyvim.util'.ui.foldtext()"
 end
+
+-- window
+w.wrap = true
+w.linebreak = true
+w.list = false -- extra option I set in addition to the ones in your question

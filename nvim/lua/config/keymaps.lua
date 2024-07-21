@@ -27,7 +27,7 @@ vim.keymap.set("n", "<leader>t", function()
 	vim.cmd("term")
 	vim.cmd("startinsert")
 end, opt)
-vim.keymap.set("t", "jk", "<C-\\><C-N>", table.insert(opt, { desc = "Exit terminal" }))
+vim.keymap.set("t", "<Esc>", "<C-\\><C-N>", table.insert(opt, { desc = "Exit terminal" }))
 
 -- window
 vim.keymap.set("n", "<C-h>", "<C-w>h")
