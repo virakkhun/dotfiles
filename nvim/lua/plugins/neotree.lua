@@ -56,6 +56,7 @@ return {
 		},
 	},
 	init = function()
+		vim.keymap.set("n", "<leader>E", ":Neotree focus<CR>")
 		vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>")
 	end,
 }

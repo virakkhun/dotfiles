@@ -32,6 +32,7 @@ return {
 					"markdown",
 					"vue",
 					"svelte",
+					"nginx",
 				},
 				sync_install = false,
 				highlight = {
