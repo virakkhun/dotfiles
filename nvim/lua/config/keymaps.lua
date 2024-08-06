@@ -15,6 +15,10 @@ vim.keymap.set("n", "W", "<C-w>", opt)
 vim.keymap.set("n", "<leader>L", ":LazyGit<CR>", opt)
 vim.keymap.set("n", "<leader>w", ":bp | :bd #<CR>", opt)
 
+-- buffer
+vim.keymap.set("n", "<leader>]", "<CMD>bn<CR>", opt)
+vim.keymap.set("n", "<leader>[", "<CMD>bp<CR>", opt)
+
 -- word selection
 vim.keymap.set("n", '<leader>"', "vaw", { noremap = true, silent = true, desc = "Surround a word" })
 

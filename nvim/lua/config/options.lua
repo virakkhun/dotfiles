@@ -1,6 +1,7 @@
 local g = vim.g
 local opt = vim.opt
 local w = vim.wo
+local hl = vim.api.nvim_set_hl
 g.mapleader = " "
 g.maplocalleader = "\\"
 g.lazyvim_statuscolumn = {
@@ -10,7 +11,6 @@ g.lazyvim_statuscolumn = {
 -- Fix markdown indentation settings
 g.markdown_recommended_style = 0
 
-opt.laststatus = 3
 opt.clipboard = "unnamedplus"
 opt.cursorline = true
 opt.expandtab = true
@@ -56,4 +56,10 @@ end
 -- window
 w.wrap = true
 w.linebreak = true
-w.list = false -- extra option I set in addition to the ones in your question
+w.list = false
+
+-- status line
+opt.laststatus = 3
+
+-- cmd
+opt.cmdheight = 0
