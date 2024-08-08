@@ -5,3 +5,6 @@
 !/alacritty/**/*
 !.gitignore
 !readme.md
+!marksman/
+!marksman/*
+!.marksman.toml

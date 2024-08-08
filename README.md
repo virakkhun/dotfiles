@@ -1,4 +1,4 @@
-hello folks!!
+# hello folks
 
 these are my dotfiles
 

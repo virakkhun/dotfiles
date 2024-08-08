@@ -1,6 +1,9 @@
+-- Keymaps are automatically loaded on the VeryLazy event
+-- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+-- Add any additional keymaps here
 local opt = {
-	noremap = true,
-	silent = true,
+  noremap = true,
+  silent = true,
 }
 
 vim.keymap.set("n", "<leader>s", ":w<CR>", opt)
@@ -24,12 +27,12 @@ vim.keymap.set("n", '<leader>"', "vaw", { noremap = true, silent = true, desc = 
 
 -- terminal
 vim.keymap.set("n", "<leader>t", function()
-	vim.cmd("belowright 12split")
-	vim.cmd("set winfixheight")
-	vim.cmd("set nonumber")
-	vim.cmd("set norelativenumber")
-	vim.cmd("term")
-	vim.cmd("startinsert")
+  vim.cmd("belowright 12split")
+  vim.cmd("set winfixheight")
+  vim.cmd("set nonumber")
+  vim.cmd("set norelativenumber")
+  vim.cmd("term")
+  vim.cmd("startinsert")
 end, opt)
 vim.keymap.set("t", "<Esc>", "<C-\\><C-N>", table.insert(opt, { desc = "Exit terminal" }))
 
