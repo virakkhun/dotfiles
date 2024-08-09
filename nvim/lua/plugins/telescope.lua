@@ -2,9 +2,8 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     keys = {
-      -- add a keymap to browse plugin files
-      -- stylua: ignore
-      {"<leader>sj", false},
+      { "<leader>sj", false },
+      { "<leader>sk", false },
       {
         "<leader>fp",
         function()
