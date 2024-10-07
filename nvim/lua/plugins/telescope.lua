@@ -18,6 +18,27 @@ return {
         end,
         desc = "Find colorscheme",
       },
+      {
+        "<leader>fs",
+        function()
+          require("telescope.builtin").live_grep()
+        end,
+        desc = "Live grep",
+      },
+      {
+        "<leader>fw",
+        function()
+          require("telescope.builtin").grep_string()
+        end,
+        desc = "Find word",
+      },
+      {
+        "<leader>fk",
+        function()
+          require("telescope.builtin").keymaps()
+        end,
+        desc = "List keymaps",
+      },
     },
     -- change some options
     opts = {

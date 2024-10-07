@@ -14,9 +14,28 @@ return {
         cssls = {},
         bashls = {},
         nginx_language_server = {},
-        tsserver = {},
+        ts_ls = {
+          enabled = true,
+          init_options = {
+            preferences = {
+              importModuleSpecifierPreference = "relative",
+              importModuleSpecifierEnding = "minimal",
+            },
+          },
+        },
+        angularls = {},
         vtsls = {
           enabled = false,
+        },
+      },
+      setup = {
+        setup = {
+          angularls = function()
+            LazyVim.lsp.on_attach(function(client)
+              --HACK: disable angular renaming capability due to duplicate rename popping up
+              client.server_capabilities.renameProvider = false
+            end, "angularls")
+          end,
         },
       },
     },
