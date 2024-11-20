@@ -19,6 +19,8 @@ return {
         "yaml",
         "angular",
         "nginx",
+        "css",
+        "scss",
       },
     },
   },
