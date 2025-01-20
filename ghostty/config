@@ -1,0 +1,11 @@
+theme = tokyonight-storm 
+macos-titlebar-style = hidden
+gtk-titlebar = false
+
+window-padding-y = 2
+window-padding-x = 6
+window-padding-balance = true
+window-decoration = true
+
+font-thicken = false
+font-size = 16

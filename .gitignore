@@ -8,3 +8,7 @@
 !marksman/
 !marksman/*
 !.marksman.toml
+!scripts
+!scripts/**/*
+!ghostty
+!ghostty/**/*

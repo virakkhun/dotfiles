@@ -17,19 +17,6 @@ return {
         eslint = {
           enabled = false,
         },
-        -- ts_ls = {
-        --   enabled = false,
-        -- },
-        -- tsserver = {
-        --   enabled = false,
-        --   init_options = {
-        --     preferences = {
-        --       importModuleSpecifierPreference = "relative",
-        --       importModuleSpecifierEnding = "minimal",
-        --     },
-        --   },
-        -- },
-        -- angularls = {},
         vtsls = {
           settings = {
             typescript = {
@@ -40,6 +27,7 @@ return {
             },
           },
         },
+        denols = {},
       },
     },
   },
