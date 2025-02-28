@@ -21,6 +21,8 @@ return {
         "nginx",
         "css",
         "scss",
+        "cpp",
+        "c",
       },
     },
   },
