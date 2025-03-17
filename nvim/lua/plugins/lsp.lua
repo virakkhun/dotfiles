@@ -9,6 +9,9 @@ return {
         enabled = false,
       },
       servers = {
+        tailwindcss = {
+          filetypes_include = { "html", "tsx", "css" },
+        },
         lua_ls = {},
         html = {},
         cssls = {},
@@ -27,6 +30,7 @@ return {
             },
           },
         },
+        denols = {},
       },
     },
   },
