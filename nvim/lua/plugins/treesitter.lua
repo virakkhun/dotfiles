@@ -23,6 +23,7 @@ return {
         "scss",
         "cpp",
         "c",
+        "swift",
       },
     },
   },
