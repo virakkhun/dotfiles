@@ -100,6 +100,9 @@ return {
         angularls = function()
           return not includes(files, "angular.json")
         end,
+        sourcekit = function()
+          return not includes(files, "Package.swift")
+        end,
       },
     },
   },
