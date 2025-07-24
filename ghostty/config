@@ -9,3 +9,7 @@ window-decoration = true
 
 font-thicken = false
 font-size = 16
+font-feature = -calt
+
+# background-opacity = 0.8
+# background-blur = true

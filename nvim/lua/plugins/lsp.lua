@@ -72,27 +72,28 @@ return {
         sourcekit = {},
         lua_ls = {},
         html = {},
-        cssls = {},
-        bashls = {},
-        nginx_language_server = {},
-        eslint = {
-          enabled = false,
-        },
-        vtsls = {
+        cssls = {
+          lint = {
+            unknownAtRules = "ignore",
+          },
           settings = {
-            typescript = {
-              preferences = {
-                importModuleSpecifier = "relative",
-                importModuleSpecifierEnding = "minimal",
+            css = {
+              lint = {
+                unknownAtRules = "ignore",
               },
             },
           },
+        },
+        bashls = {},
+        nginx_language_server = {},
+        eslint = {
+          enabled = true,
         },
         denols = {},
       },
       setup = {
         tailwindcss = function()
-          return not includes(files, "tailwind.config.js")
+          return not includes(files, "tailwind.config.js") and includes(files, "deno.json")
         end,
         denols = function()
           return not includes(files, "deno.json")
