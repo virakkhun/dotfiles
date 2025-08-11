@@ -1,6 +1,51 @@
 local output = vim.fn.system({ "ls" })
 local files = vim.split(output, "\n")
 
+local tailwind_filetypes_exclude = {
+  "aspnetcorerazor",
+  "astro",
+  "astro-markdown",
+  "blade",
+  "clojure",
+  "django-html",
+  "htmldjango",
+  "edge",
+  "eelixir",
+  "elixir",
+  "ejs",
+  "erb",
+  "eruby",
+  "gohtml",
+  "gohtmltmpl",
+  "haml",
+  "handlebars",
+  "hbs",
+  "htmlangular",
+  "html-eex",
+  "heex",
+  "jade",
+  "leaf",
+  "liquid",
+  "markdown",
+  "mustache",
+  "njk",
+  "nunjucks",
+  "php",
+  "razor",
+  "slim",
+  "twig",
+  "less",
+  "postcss",
+  "sass",
+  "stylus",
+  "sugarss",
+  "javascript",
+  "reason",
+  "rescript",
+  "typescript",
+  "templ",
+}
+
 --- find item in an array
 ---@param tbl table
 ---@param item string
@@ -24,49 +69,13 @@ return {
       },
       servers = {
         tailwindcss = {
-          filetypes_exclude = {
-            "aspnetcorerazor",
-            "astro",
-            "astro-markdown",
-            "blade",
-            "clojure",
-            "django-html",
-            "htmldjango",
-            "edge",
-            "eelixir",
-            "elixir",
-            "ejs",
-            "erb",
-            "eruby",
-            "gohtml",
-            "gohtmltmpl",
-            "haml",
-            "handlebars",
-            "hbs",
-            "htmlangular",
-            "html-eex",
-            "heex",
-            "jade",
-            "leaf",
-            "liquid",
-            "markdown",
-            "mustache",
-            "njk",
-            "nunjucks",
-            "php",
-            "razor",
-            "slim",
-            "twig",
-            "less",
-            "postcss",
-            "sass",
-            "stylus",
-            "sugarss",
-            "javascript",
-            "reason",
-            "rescript",
-            "typescript",
-            "templ",
+          settings = {
+            tailwindCSS = {
+              experimental = {
+                configFile = "/Users/virak/Documents/projects/iqair-website/app/styles/tailwind.css",
+              },
+            },
+            filetypes_exclude = tailwind_filetypes_exclude,
           },
         },
         sourcekit = {},
@@ -90,6 +99,20 @@ return {
           enabled = true,
         },
         denols = {},
+        vtsls = {
+          settings = {
+            javascript = {
+              preferences = {
+                importModuleSpecifier = "non-relative", -- Or "relative", "auto", "project-relative"
+              },
+            },
+            typescript = {
+              preferences = {
+                importModuleSpecifier = "non-relative", -- Or "relative", "auto", "project-relative"
+              },
+            },
+          },
+        },
       },
       setup = {
         tailwindcss = function()
