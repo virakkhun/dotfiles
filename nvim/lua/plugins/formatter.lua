@@ -1,20 +1,27 @@
 return {
   "stevearc/conform.nvim",
-  enabled = false,
   opts = {
     formatters_by_ft = {
       lua = { "stylua" },
       rust = { "rust-analyzer", lsp_format = "fallback" },
-      javascript = { "prettierd", stop_after_first = true },
-      typescript = { "prettierd", stop_after_first = true },
+      javascript = { "prettier", "prettierd", stop_after_first = true },
+      typescript = { "prettier", "prettierd", stop_after_first = true },
     },
     format_on_save = {
       lsp_format = "fallback",
+      timeout_ms = 500,
     },
     formatters = {
+      prettier = {
+        condition = function()
+          return vim.fs.root(0, { "deno.json" }) == nil
+        end,
+      },
       prettierd = {
-        args = { "--single-quote" }
-      }
-    }
+        condition = function()
+          return vim.fs.root(0, { "deno.json" }) == nil
+        end,
+      },
+    },
   },
 }
