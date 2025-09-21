@@ -1,6 +1,3 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.statuscolumn = "%s%=%{v:relnum?v:relnum:v:lnum} %C "
@@ -9,7 +6,6 @@ vim.opt.wrap = false
 vim.opt.cmdheight = 0
 vim.opt.spelllang = { "en" }
 vim.opt.winborder = "rounded"
-
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
@@ -62,7 +58,7 @@ vim.opt.wildignorecase = true
 vim.opt.shortmess:append({ W = true, I = true, c = true, C = true })
 
 
-vim.opt.foldmethod = "indent"
+vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldlevel = 99
 vim.opt.foldtext = ""
@@ -71,3 +67,8 @@ vim.opt.laststatus = 3
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+
+-- lsp
+vim.g.markdown_fenced_languages = {
+  "ts=typescript"
+}
