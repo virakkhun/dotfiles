@@ -23,17 +23,13 @@ return {
 				},
 			},
 		},
-		cmdline = {
-			enabled = false,
-			completion = { menu = { auto_show = true } },
-			keymap = {
-				["<CR>"] = { "accept_and_enter", "fallback" },
-			},
-		},
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
 		},
 		fuzzy = { implementation = "prefer_rust" },
+		cmdline = {
+			enabled = false,
+		},
 	},
 	opts_extend = { "sources.default" },
 }

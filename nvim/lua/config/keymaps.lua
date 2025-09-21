@@ -14,6 +14,7 @@ vim.keymap.set("n", "<leader>vs", "<C-W>s", opt)
 
 -- lsp
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, opt)
+vim.keymap.set("n", "<leader>gt", vim.lsp.buf.type_definition, opt)
 vim.keymap.set("n", "<leader>ga", vim.lsp.buf.code_action, opt)
 
 -- buffer
@@ -30,6 +31,7 @@ vim.keymap.set("n", "<leader>t", function()
 	vim.cmd("set winfixheight")
 	vim.cmd("set nonumber")
 	vim.cmd("set norelativenumber")
+	vim.cmd("set statuscolumn=")
 	vim.cmd("term")
 	vim.cmd("startinsert")
 end, opt)
