@@ -1,6 +1,6 @@
 local opt = {
-	noremap = true,
-	silent = true,
+  noremap = true,
+  silent = true,
 }
 
 vim.keymap.set("n", "<leader>s", ":w<CR>", opt)
@@ -27,13 +27,13 @@ vim.keymap.set("n", '<leader>"', "vaw", { noremap = true, silent = true, desc = 
 
 -- terminal
 vim.keymap.set("n", "<leader>t", function()
-	vim.cmd("belowright 12split")
-	vim.cmd("set winfixheight")
-	vim.cmd("set nonumber")
-	vim.cmd("set norelativenumber")
-	vim.cmd("set statuscolumn=")
-	vim.cmd("term")
-	vim.cmd("startinsert")
+  vim.cmd("belowright 12split")
+  vim.cmd("set winfixheight")
+  vim.cmd("set nonumber")
+  vim.cmd("set norelativenumber")
+  vim.cmd("set statuscolumn=")
+  vim.cmd("term")
+  vim.cmd("startinsert")
 end, opt)
 vim.keymap.set("t", "<Esc>", "<C-\\><C-N>", table.insert(opt, { desc = "Exit terminal" }))
 
@@ -45,5 +45,5 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 
 -- git
 vim.keymap.set("n", "gl", function()
-	vim.cmd("TrackLog")
+  vim.cmd("TrackLog")
 end, { desc = "Inline git log" })

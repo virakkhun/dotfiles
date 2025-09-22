@@ -16,12 +16,8 @@ vim.opt.autoindent = true
 vim.opt.grepprg = "rg --vimgrep"
 vim.opt.grepformat = "%f:%l:%c:%m"
 
-
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.hlsearch = true
-vim.opt.incsearch = true
-
 
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
@@ -33,7 +29,6 @@ vim.opt.pumheight = 10
 vim.opt.pumblend = 10
 vim.opt.winblend = 0
 
-
 vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.swapfile = false
@@ -41,14 +36,10 @@ vim.opt.undofile = true
 vim.opt.updatetime = 300
 vim.opt.timeoutlen = 500
 vim.opt.ttimeoutlen = 0
-vim.opt.autoread = true
-vim.opt.autowrite = false
-
 
 vim.opt.errorbells = false
 vim.opt.backspace = "indent,eol,start"
 vim.opt.autochdir = false
-vim.opt.selection = "inclusive"
 vim.opt.mouse = "a"
 vim.opt.clipboard:append("unnamedplus")
 vim.opt.encoding = "UTF-8"
@@ -57,18 +48,13 @@ vim.opt.wildmode = "longest:full,full"
 vim.opt.wildignorecase = true
 vim.opt.shortmess:append({ W = true, I = true, c = true, C = true })
 
-
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldlevel = 99
 vim.opt.foldtext = ""
 vim.opt.laststatus = 3
 
-
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-
 -- lsp
 vim.g.markdown_fenced_languages = {
-  "ts=typescript"
+  "ts=typescript",
 }
