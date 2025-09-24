@@ -1,4 +1,4 @@
-local function flat_tbl(tbl)
+local function to_str_format(tbl)
   local each = {}
 
   local function tostr(t)
@@ -44,7 +44,7 @@ vim.api.nvim_create_user_command("LspInfo", function()
     },
   }
 
-  print(flat_tbl(fmt))
+  print(to_str_format(fmt))
 end, {
   nargs = "*",
   complete = function()
