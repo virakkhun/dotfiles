@@ -13,7 +13,7 @@ vim.keymap.set("n", "<leader>v", ":vs<CR>", opt)
 vim.keymap.set("n", "<leader>vs", "<C-W>s", opt)
 
 -- lsp
-vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, opt)
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, opt)
 vim.keymap.set("n", "<leader>gt", vim.lsp.buf.type_definition, opt)
 vim.keymap.set("n", "<leader>ga", vim.lsp.buf.code_action, opt)
 

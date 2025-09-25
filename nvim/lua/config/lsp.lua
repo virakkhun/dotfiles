@@ -1,9 +1,11 @@
-vim.lsp.enable({
-  "lua_ls",
-  "vtsls",
-  "denols",
-  "vimls",
-})
+local lsp_files = vim.fs.dir(vim.fs.joinpath(vim.env.PWD, "lsp"))
+local lsp_enabled_tbl = {}
+
+for file in lsp_files do
+  table.insert(lsp_enabled_tbl, file)
+end
+
+vim.lsp.enable(lsp_enabled_tbl)
 
 vim.diagnostic.config({
   virtual_text = true,

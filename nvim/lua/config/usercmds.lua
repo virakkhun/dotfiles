@@ -1,6 +1,5 @@
 local function to_str_format(tbl)
   local each = {}
-
   local function tostr(t)
     local result = {}
     for _, value in pairs(t) do
@@ -21,30 +20,35 @@ local function to_str_format(tbl)
 end
 
 vim.api.nvim_create_user_command("LspInfo", function()
-  local client = vim.lsp.get_client_by_id(1)
+  local clients = vim.lsp.get_clients()
 
-  if client == nil then
+  if clients == nil then
     print("no client available")
     return
   end
 
-  local fmt = {
-    { "id: ", client.id },
-    "\n",
-    { "name: ", client.name },
-    "\n",
-    {
-      "is_active: ",
-      client.initialized and "Active ✔︎",
-    },
-    "\n",
-    {
-      "root_dir: ",
-      client.root_dir,
-    },
-  }
+  local client_fmt = {}
 
-  print(to_str_format(fmt))
+  for _, client in pairs(clients) do
+    local fmt = {
+      { "id: ", client.id },
+      "\n",
+      { "name: ", client.name },
+      "\n",
+      {
+        "is_active: ",
+        #client.attached_buffers > 0 and "Active ✔︎" or "Inactive ✖︎",
+      },
+      "\n",
+      {
+        "root_dir: ",
+        client.root_dir,
+      },
+    }
+    table.insert(client_fmt, to_str_format(fmt))
+  end
+
+  print(table.concat(client_fmt, "\n========\n"))
 end, {
   nargs = "*",
   complete = function()
