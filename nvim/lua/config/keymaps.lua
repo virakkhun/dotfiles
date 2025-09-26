@@ -15,7 +15,7 @@ vim.keymap.set("n", "<leader>vs", "<C-W>s", opt)
 -- lsp
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, opt)
 vim.keymap.set("n", "<leader>gt", vim.lsp.buf.type_definition, opt)
-vim.keymap.set("n", "<leader>ga", vim.lsp.buf.code_action, opt)
+vim.keymap.set("n", "<leader>ca", ":FzfLua lsp_code_actions previewer=codeaction_native<CR>", opt)
 
 -- buffer
 vim.keymap.set("n", "<leader>]", "<CMD>bn<CR>", opt)

@@ -5,7 +5,7 @@ vim.opt.cursorline = true
 vim.opt.wrap = false
 vim.opt.cmdheight = 0
 vim.opt.spelllang = { "en" }
-vim.opt.winborder = "rounded"
+vim.opt.winborder = "solid"
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2

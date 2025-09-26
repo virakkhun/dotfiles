@@ -40,11 +40,11 @@ return {
       },
     },
     config = function(_, opts)
-      require('nvim-treesitter.configs').setup({
+      require("nvim-treesitter.configs").setup({
         auto_install = true,
         ensure_installed = opts.ensure_installed,
-        highlight = opts.highlight
+        highlight = opts.highlight,
       })
-    end
+    end,
   },
 }
