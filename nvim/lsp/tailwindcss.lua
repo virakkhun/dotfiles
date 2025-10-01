@@ -65,7 +65,6 @@ return {
       ".git",
     }
     local project_root = vim.fs.root(bufnr, root_markers) or vim.fn.getcwd()
-    print(":::project_root:::", project_root)
 
     on_dir(project_root)
   end,
