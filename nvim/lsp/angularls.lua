@@ -85,6 +85,10 @@ return {
       return false
     end
 
+    if vim.fs.root(bufnr, { "angular.json" }) == nil then
+      return false
+    end
+
     local root = vim.fs.root(bufnr, { "angular.json" }) or vim.fn.getcwd()
     on_dir(root)
   end,

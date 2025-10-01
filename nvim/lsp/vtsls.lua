@@ -21,4 +21,28 @@ return {
 
     on_dir(project_root)
   end,
+  settings = {
+    javascript = {
+      -- preferences = {
+      --   importModuleSpecifier = "non-relative", -- Or "relative", "auto", "project-relative"
+      -- },
+      suggestionActions = {
+        enabled = false,
+      },
+    },
+    typescript = {
+      -- preferences = {
+      --   importModuleSpecifier = "non-relative", -- Or "relative", "auto", "project-relative"
+      -- },
+      suggestionActions = {
+        enabled = false,
+      },
+      -- disable jsdoc @returns
+      suggest = {
+        jsdoc = {
+          generateReturns = false,
+        },
+      },
+    },
+  },
 }
