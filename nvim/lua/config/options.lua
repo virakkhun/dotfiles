@@ -51,7 +51,7 @@ vim.opt.shortmess:append({ W = true, I = true, c = true, C = true })
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldlevel = 99
-vim.opt.foldtext = ">"
+vim.opt.foldtext = ""
 vim.opt.laststatus = 3
 
 -- lsp
