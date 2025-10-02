@@ -1,6 +1,6 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.statuscolumn = "%s%=%{v:relnum?v:relnum:v:lnum} %C "
+vim.opt.statuscolumn = "%=%{v:relnum?v:relnum:v:lnum}%="
 vim.opt.cursorline = true
 vim.opt.wrap = false
 vim.opt.cmdheight = 0
@@ -51,7 +51,7 @@ vim.opt.shortmess:append({ W = true, I = true, c = true, C = true })
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldlevel = 99
-vim.opt.foldtext = ""
+vim.opt.foldtext = ">"
 vim.opt.laststatus = 3
 
 -- lsp

@@ -3,8 +3,8 @@ local opt = {
   silent = true,
 }
 
-vim.keymap.set("n", "<leader>s", ":w<CR>", opt)
-vim.keymap.set("n", "<leader>cs", ":nohls<Return>", opt)
+vim.keymap.set("n", "<leader>s", ":silent! w<CR>", opt)
+vim.keymap.set("n", "<leader>cs", ":nohls<CR>", opt)
 vim.keymap.set("n", "<leader>M", ":Mason<CR>", opt)
 vim.keymap.set("n", "Q", ":q!<CR>", opt)
 vim.keymap.set({ "i" }, "jk", "<Esc>", { silent = true })
@@ -18,9 +18,9 @@ vim.keymap.set("n", "<leader>gt", vim.lsp.buf.type_definition, opt)
 vim.keymap.set("n", "<leader>ca", ":FzfLua lsp_code_actions previewer=codeaction_native<CR>", opt)
 
 -- buffer
-vim.keymap.set("n", "<leader>]", "<CMD>bn<CR>", opt)
-vim.keymap.set("n", "<leader>[", "<CMD>bp<CR>", opt)
-vim.keymap.set("n", "<leader>bd", "<CMD>bdelete<CR>", opt)
+vim.keymap.set("n", "<leader>]", ":bn<CR>", opt)
+vim.keymap.set("n", "<leader>[", ":bp<CR>", opt)
+vim.keymap.set("n", "<leader>bd", ":bdelete<CR>", opt)
 
 -- word selection
 vim.keymap.set("n", '<leader>"', "vaw", { noremap = true, silent = true, desc = "Surround a word" })
@@ -35,7 +35,6 @@ vim.keymap.set("n", "<leader>t", function()
   vim.cmd("term")
   vim.cmd("startinsert")
 end, opt)
-vim.keymap.set("t", "<Esc>", "<C-\\><C-N>", table.insert(opt, { desc = "Exit terminal" }))
 
 -- window
 vim.keymap.set("n", "<C-h>", "<C-w>h")

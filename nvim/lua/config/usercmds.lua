@@ -22,8 +22,8 @@ end
 vim.api.nvim_create_user_command("LspInfo", function()
   local clients = vim.lsp.get_clients()
 
-  if clients == nil then
-    print("no client available")
+  if clients == nil or #clients == 0 then
+    print("!no client available")
     return
   end
 
@@ -37,7 +37,7 @@ vim.api.nvim_create_user_command("LspInfo", function()
       "\n",
       {
         "is_active: ",
-        #client.attached_buffers > 0 and "Active ✔︎" or "Inactive ✖︎",
+        type(client.attached_buffers[1]) == nil and "Inactive ✖︎" or "Active ✔︎",
       },
       "\n",
       {
