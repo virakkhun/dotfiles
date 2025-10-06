@@ -1,0 +1,11 @@
+-- terminal
+vim.keymap.set("n", "<leader>t", function()
+  vim.cmd("belowright 12split")
+  vim.cmd("set winfixheight")
+  vim.cmd("set nonumber")
+  vim.cmd("set norelativenumber")
+  vim.cmd("set statuscolumn=")
+  vim.cmd("term")
+  vim.cmd("startinsert")
+end, { noremap = true, silent = true })
+vim.keymap.set("t", "<Esc>", "<C-\\><C-N>", { desc = "Exit terminal", noremap = true, silent = true })
