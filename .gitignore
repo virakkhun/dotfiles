@@ -5,11 +5,9 @@
 !/alacritty/**/*
 !.gitignore
 !readme.md
-!marksman/
-!marksman/*
-!.marksman.toml
 !scripts
 !scripts/**/*
 !ghostty
 !ghostty/**/*
 *.bkp/**/*
+!.wezterm.lua
