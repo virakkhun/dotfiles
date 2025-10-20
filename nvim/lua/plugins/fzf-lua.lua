@@ -10,5 +10,8 @@ return {
   },
   opts = {
     winopts = { border = { " " }, preview = { border = { " " } } },
+    fzf = {
+      ["alt-a"] = "select-all+accept",
+    },
   },
 }
