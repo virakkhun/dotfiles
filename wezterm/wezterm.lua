@@ -2,9 +2,9 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
-config.font_size = 22
+config.font_size = 20
 config.line_height = 1.0
-config.font = wezterm.font("BlexMono Nerd Font Mono")
+config.font = wezterm.font("SF Mono")
 
 local function get_theme()
 	if wezterm.gui then
@@ -19,6 +19,7 @@ config.color_scheme = get_theme()
 config.colors = {
 	cursor_bg = "#7aa2f7",
 	cursor_border = "#7aa2f7",
+	background = "#292a30",
 }
 
 config.window_decorations = "RESIZE"
