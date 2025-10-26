@@ -4,7 +4,7 @@ return {
     keymaps = {
       ["l"] = "actions.select",
       ["<CR>"] = "actions.select",
-    }
+    },
   },
   lazy = false,
   keys = {

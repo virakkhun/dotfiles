@@ -11,6 +11,7 @@ return {
     "typescriptreact",
     "typescript.tsx",
   },
+  root_markers = { "package-lock.json", "yarn.lock", "pnpm-lock.yaml", "bun.lockb", "bun.lock" },
   root_dir = function(bufnr, on_dir)
     if vim.fs.root(bufnr, { "deno.json" }) then
       return false

@@ -1,3 +1,5 @@
+vim.g.blink_cmp_debug = true
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.statuscolumn = "%=%{v:relnum?v:relnum:v:lnum}%="

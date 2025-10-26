@@ -2,7 +2,7 @@ return {
   "stevearc/conform.nvim",
   opts = {
     formatters_by_ft = {
-      lua = { "stylua" },
+      lua = { "stylua", lsp_format = "fallback" },
       rust = { "rust-analyzer", lsp_format = "fallback" },
       javascript = { "prettier", "prettierd", stop_after_first = true },
       typescript = { "prettier", "prettierd", stop_after_first = true },

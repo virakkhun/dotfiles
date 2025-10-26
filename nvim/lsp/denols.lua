@@ -1,18 +1,3 @@
----@brief
----
---- https://github.com/denoland/deno
----
---- Deno's built-in language server
----
---- To appropriately highlight codefences returned from denols, you will need to augment vim.g.markdown_fenced languages
----  in your init.lua. Example:
----
---- ```lua
---- vim.g.markdown_fenced_languages = {
----   "ts=typescript"
---- }
---- ```
-
 local lsp = vim.lsp
 
 local function virtual_text_document_handler(uri, res, client)
@@ -106,6 +91,7 @@ return {
       desc = "Cache a module and all of its dependencies.",
     })
   end,
+  root_markers = { "deno.json", ".git" },
   root_dir = function(bufnr, on_dir)
     local root = vim.fs.root(bufnr, { "deno.json", "deno.jsonc" })
 

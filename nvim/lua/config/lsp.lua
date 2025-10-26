@@ -1,8 +1,9 @@
-local lsp_files = vim.fs.dir(vim.fs.joinpath(vim.env.PWD, "lsp"))
+local lsp_files = vim.fs.dir(vim.fs.joinpath("~/.config/nvim", "lsp"))
 local lsp_enabled_tbl = {}
 
 for file in lsp_files do
-  table.insert(lsp_enabled_tbl, file)
+  local lsp_name = vim.split(file, ".", { plain = true })
+  table.insert(lsp_enabled_tbl, lsp_name[1])
 end
 
 vim.lsp.enable(lsp_enabled_tbl)

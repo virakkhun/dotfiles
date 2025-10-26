@@ -1,14 +1,15 @@
 return {
   {
-
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
     opts = {
-      transparent = true,
+      transparent = false,
     },
-    config = function()
-      vim.cmd([[colorscheme tokyonight-night]])
-    end,
+  },
+  {
+    "lunacookies/vim-colors-xcode",
+    lazy = false,
+    priority = 1000,
   },
 }

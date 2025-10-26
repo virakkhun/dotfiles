@@ -27,6 +27,7 @@ return {
         "cpp",
         "c",
         "swift",
+        "jsdoc",
       },
       highlight = {
         enable = true,
