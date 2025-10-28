@@ -5,7 +5,6 @@ vim.opt.relativenumber = true
 vim.opt.statuscolumn = "%=%{v:relnum?v:relnum:v:lnum}%="
 vim.opt.cursorline = true
 vim.opt.wrap = false
-vim.opt.cmdheight = 0
 vim.opt.spelllang = { "en" }
 vim.opt.winborder = "solid"
 
