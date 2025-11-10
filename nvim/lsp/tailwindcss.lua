@@ -47,10 +47,6 @@ return {
   },
   workspace_required = true,
   root_dir = function(bufnr, on_dir)
-    if vim.fs.root(bufnr, { "deno.json" }) then
-      return false
-    end
-
     local root_markers = {
       -- Generic
       "tailwind.config.js",
