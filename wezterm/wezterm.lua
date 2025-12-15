@@ -8,7 +8,7 @@ config.font = wezterm.font("SF Mono")
 
 local function get_theme()
 	if wezterm.gui then
-		return wezterm.gui.get_appearance() == "Dark" and "tokyonight_night" or "tokyonight_day"
+		return wezterm.gui.get_appearance() == "Dark" and "catppuccin-mocha" or "catppuccin-latte"
 	end
 
 	return "tokyonight_night"
@@ -19,7 +19,6 @@ config.color_scheme = get_theme()
 config.colors = {
 	cursor_bg = "#7aa2f7",
 	cursor_border = "#7aa2f7",
-	background = "#292a30",
 }
 
 config.window_decorations = "RESIZE"
