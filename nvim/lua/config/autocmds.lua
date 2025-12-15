@@ -11,11 +11,19 @@ vim.api.nvim_create_autocmd("LspAttach", {
         { noremap = true, silent = true, desc = "Go to implementation" }
       )
     end
+  end,
+})
 
-    -- if client:supports_method("textDocument/completion") then
-    -- using blink as a completion menu instead of default
-    -- client.capabilities = require("blink.cmp").get_lsp_capabilities(client.capabilities)
-    -- vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
-    -- end
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.component.html",
+  callback = function()
+    vim.bo.filetype = "htmlangular"
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "oil" },
+  callback = function()
+    vim.opt_local.statuscolumn = "%s"
   end,
 })
