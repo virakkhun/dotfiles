@@ -8,7 +8,7 @@ return {
       typescript = { "prettier", "prettierd", stop_after_first = true },
       html = { "prettier", "prettierd", stop_after_first = true },
       htmlangular = { "prettier", "prettierd", stop_after_first = true },
-      json = { "prettier", "prettierd", "deno_fmt", stop_after_first = true },
+      json = { "prettier", "prettierd", lsp_format = "fallback", stop_after_first = true },
     },
     format_on_save = {
       lsp_format = "fallback",

@@ -43,10 +43,14 @@ local ngserver_exe = vim.fn.exepath("ngserver")
 local ngserver_path = #(ngserver_exe or "") > 0 and vim.fs.dirname(vim.uv.fs_realpath(ngserver_exe)) or "?"
 local extension_path = vim.fs.normalize(vim.fs.joinpath(ngserver_path, "../../../"))
 
+-- v19
+local v19_ngserver_path = "/Users/virak/.nvm/versions/node/v22.13.1/lib/node_modules/@angular/language-server/bin"
+local v19_extension_path = "/Users/virak/.nvm/versions/node/v22.13.1/lib/node_modules"
+
 -- angularls will get module by `require.resolve(PROBE_PATH, MODULE_NAME)` of nodejs
-local ts_probe_dirs = vim.iter({ extension_path, default_probe_dir }):join(",")
+local ts_probe_dirs = vim.iter({ extension_path, v19_extension_path, default_probe_dir }):join(",")
 local ng_probe_dirs = vim
-  .iter({ extension_path, default_probe_dir })
+  .iter({ extension_path, v19_extension_path, default_probe_dir })
   :map(function(p)
     return vim.fs.joinpath(p, "/@angular/language-server/node_modules")
   end)

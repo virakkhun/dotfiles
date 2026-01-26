@@ -15,7 +15,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = "*.component.html",
+  pattern = { "*.component.html", "*.page.html" },
   callback = function()
     vim.bo.filetype = "htmlangular"
   end,
@@ -32,7 +32,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     local client = vim.lsp.get_client_by_id(args.data.client_id)
     if client.name == "pylsp" then
-      vim.diagnostic.disable(args.buf)
+      vim.diagnostic.enable(false, { bufnr = 0 })
     end
   end,
 })

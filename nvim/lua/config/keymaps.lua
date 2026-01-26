@@ -31,6 +31,9 @@ vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 
+-- copy current path
+vim.keymap.set("n", "<C-c>", ":CopyCurrentPath<CR>", opt)
+
 -- git
 vim.keymap.set("n", "gl", function()
   vim.cmd("TrackLog")

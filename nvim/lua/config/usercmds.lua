@@ -55,3 +55,27 @@ end, {
     return { "key", "default" }
   end,
 })
+
+-- Make terminal buffers unlisted and auto-wipe
+vim.api.nvim_create_autocmd("TermOpen", {
+  callback = function()
+    vim.opt_local.buflisted = false
+    vim.opt_local.bufhidden = "wipe"
+    vim.opt_local.number = false
+    vim.opt_local.relativenumber = false
+    vim.opt_local.statuscolumn = ""
+    vim.opt_local.winfixheight = true
+  end,
+})
+
+vim.api.nvim_create_user_command("CopyCurrentPath", function()
+  local path = vim.fn.fnamemodify(vim.fn.expand("%"), ":.")
+  if path then
+    vim.fn.setreg("+", path)
+  end
+end, {
+  nargs = "*",
+  complete = function()
+    return { "key", "default" }
+  end,
+})
