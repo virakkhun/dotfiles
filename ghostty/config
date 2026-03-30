@@ -1,12 +1,15 @@
 theme = tokyonight
 
+
+
 window-padding-y = 6
 window-padding-x = 8
 window-padding-balance = true
 window-decoration = true
 
+font-family = JetBrains Mono, Noto Sans Khmer
 font-thicken = false
-font-size = 19
+font-size = 16
 font-feature = -calt
 
 background-opacity = 0.8

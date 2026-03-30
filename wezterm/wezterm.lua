@@ -2,9 +2,11 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
-config.font_size = 20
+config.font_size = 18
 config.line_height = 1.0
-config.font = wezterm.font("SF Mono")
+config.font = wezterm.font_with_fallback({
+	{ family = "SF Mono" },
+})
 
 local function get_theme()
 	if wezterm.gui then
