@@ -6,7 +6,9 @@ vim.opt.statuscolumn = "%=%{v:relnum?v:relnum:v:lnum}%="
 vim.opt.cursorline = true
 vim.opt.wrap = false
 vim.opt.spelllang = { "en" }
+vim.opt.spell = true
 vim.opt.winborder = "solid"
+vim.opt.fillchars = { eob = " " }
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
@@ -55,7 +57,8 @@ vim.opt.foldlevel = 99
 vim.opt.foldtext = ""
 vim.opt.laststatus = 3
 
--- lsp
+vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+
 vim.g.markdown_fenced_languages = {
-  "ts=typescript",
+	"ts=typescript",
 }

@@ -1,7 +1,11 @@
+-- keymaps
 local opt = {
-  noremap = true,
-  silent = true,
+	noremap = true,
+	silent = true,
 }
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 vim.keymap.set("n", "<leader>s", ":silent! w<CR>", opt)
 vim.keymap.set("n", "<leader>cs", ":nohls<CR>", opt)
@@ -12,34 +16,50 @@ vim.keymap.set("v", ",", "<Esc>")
 vim.keymap.set("n", "<leader>v", ":vs<CR>", opt)
 vim.keymap.set("n", "<leader>vs", "<C-W>s", opt)
 
--- lsp
+-- keymaps:lsp
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, opt)
 vim.keymap.set("n", "<leader>gt", vim.lsp.buf.type_definition, opt)
 vim.keymap.set("n", "<leader>ca", ":FzfLua lsp_code_actions previewer=codeaction_native<CR>", opt)
+vim.keymap.set("n", "<leader>gr", ":FzfLua lsp_references<CR>", opt)
 
--- buffer
+-- keymaps:buffer
 vim.keymap.set("n", "<leader>]", ":bn<CR>", opt)
 vim.keymap.set("n", "<leader>[", ":bp<CR>", opt)
 vim.keymap.set("n", "<leader>bd", ":bdelete<CR>", opt)
 
--- word selection
+-- keymaps:word selection
 vim.keymap.set("n", '<leader>"', "vaw", { noremap = true, silent = true, desc = "Surround a word" })
 
--- window
+-- keymaps:window
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 
--- copy current path
-vim.keymap.set("n", "<C-c>", ":CopyCurrentPath<CR>", opt)
+-- keymaps:explorer
+vim.keymap.set("n", "<leader>e", ":Oil<CR>", opt)
 
--- git
-vim.keymap.set("n", "gl", function()
-  vim.cmd("TrackLog")
-end, { desc = "Inline git log" })
+-- keymaps:fzf-lua
+local mappings = {
+	{ "<leader>fw", "<cmd>FzfLua grep_cword<cr>", desc = "Find word" },
+	{ "<leader>/", "<cmd>FzfLua live_grep<cr>", desc = "Live greping" },
+	{ "<leader>fk", "<cmd>FzfLua keymaps<cr>", desc = "List all keymaps" },
+	{ "<leader><leader>", "<cmd>FzfLua files<cr>", desc = "Find files" },
+	{ "<leader>,", "<cmd>FzfLua buffers<cr>", desc = "List current buffers opened" },
+}
 
--- clipboard
-vim.keymap.set({ "n", "i", "v" }, "<C-,>", function()
-  vim.cmd("Clipboard")
-end)
+for _, map in ipairs(mappings) do
+	vim.keymap.set("n", map[1], map[2], { desc = table.insert(opt, { desc = map.desc }) })
+end
+
+-- terminal
+vim.keymap.set("n", "<leader>t", function()
+	vim.cmd("belowright 12split")
+	vim.cmd("set winfixheight")
+	vim.cmd("set nonumber")
+	vim.cmd("set norelativenumber")
+	vim.cmd("set statuscolumn=")
+	vim.cmd("term")
+	vim.cmd("startinsert")
+end, { noremap = true, silent = true })
+vim.keymap.set("t", "<Esc>", "<C-\\><C-N>", { desc = "Exit terminal", noremap = true, silent = true })

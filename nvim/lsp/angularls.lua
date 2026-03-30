@@ -44,7 +44,6 @@ local ngserver_path = #(ngserver_exe or "") > 0 and vim.fs.dirname(vim.uv.fs_rea
 local extension_path = vim.fs.normalize(vim.fs.joinpath(ngserver_path, "../../../"))
 
 -- v19
-local v19_ngserver_path = "/Users/virak/.nvm/versions/node/v22.13.1/lib/node_modules/@angular/language-server/bin"
 local v19_extension_path = "/Users/virak/.nvm/versions/node/v22.13.1/lib/node_modules"
 
 -- angularls will get module by `require.resolve(PROBE_PATH, MODULE_NAME)` of nodejs
@@ -67,7 +66,7 @@ return {
     "--angularCoreVersion",
     default_angular_core_version,
   },
-  filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx", "htmlangular" },
+  filetypes = { "typescript", "html", "typescriptreact", "htmlangular" },
   root_dir = function(bufnr, on_dir)
     if vim.fs.root(bufnr, { "deno.json" }) then
       return false

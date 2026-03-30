@@ -3,8 +3,6 @@ return {
   -- filetypes copied and adjusted from tailwindcss-intellisense
   filetypes = {
     -- html
-    "gohtml",
-    "gohtmltmpl",
     "html",
     "htmlangular",
     "markdown",
@@ -18,7 +16,6 @@ return {
     -- mixed
     "vue",
     "svelte",
-    "templ",
   },
   settings = {
     tailwindCSS = {
