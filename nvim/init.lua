@@ -4,7 +4,9 @@ require("config.lsp")
 require("config.autocmds")
 require("config.usercmds")
 
-require("pack")
+require("config.pack")
+
+vim.cmd.colorscheme("catppuccin")
 
 require("mini.icons").setup()
 require("mini.pairs").setup()
@@ -15,5 +17,4 @@ require("plugins.fzf")
 require("plugins.blink")
 require("plugins.conform")
 require("plugins.gitsigns")
-
-vim.cmd.colorscheme("catppuccin-mocha")
+require("plugins.treesitter")

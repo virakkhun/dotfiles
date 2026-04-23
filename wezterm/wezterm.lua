@@ -23,8 +23,38 @@ config.colors = {
 	cursor_border = "#7aa2f7",
 }
 
+-- Map folder/project → icon
+local icons = {
+	["frontend"] = "", -- react
+	["backend"] = "", -- server
+	["api"] = "󰒋",
+	["nvim"] = "",
+	["dotfiles"] = "󱁿",
+	["default"] = "",
+}
+
+local function get_icon(name)
+	return icons[name] or icons["default"]
+end
+
+local function basename(s)
+	return string.gsub(s, "(.*[/\\])(.*)", "%2")
+end
+
+wezterm.on("format-tab-title", function(tab)
+	local pane = tab.active_pane
+	local cwd = pane.current_working_dir
+	local title = cwd and basename(cwd.file_path) or pane.title
+	local icon = get_icon(title)
+
+	return {
+		{ Text = " " .. icon .. " " .. title .. " " .. "✨" },
+	}
+end)
+
 config.window_decorations = "RESIZE"
-config.enable_tab_bar = false
+config.enable_tab_bar = true
+config.use_fancy_tab_bar = true
 
 config.keys = {
 	{

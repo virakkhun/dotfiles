@@ -9,6 +9,7 @@ vim.opt.spelllang = { "en" }
 vim.opt.spell = true
 vim.opt.winborder = "solid"
 vim.opt.fillchars = { eob = " " }
+vim.opt.cmdheight = 0
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
@@ -55,9 +56,9 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldlevel = 99
 vim.opt.foldtext = ""
-vim.opt.laststatus = 3
+vim.opt.formatexpr = "v:lua.require'conform'.formatexpr()"
 
-vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+vim.opt.laststatus = 3
 
 vim.g.markdown_fenced_languages = {
 	"ts=typescript",
